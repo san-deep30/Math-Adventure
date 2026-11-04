@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Adventure | Class 2 Maths Learning Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" id="homeBrand" aria-label="Math Adventure home">
+        <span class="brand-mark">✦</span>
+        <span><b>Math Adventure</b><small>Little steps, big maths!</small></span>
+      </a>
+      <nav class="main-nav">
+        <button class="nav-link active" id="homeNav">Home</button>
+        <button class="nav-link" id="gameNav">Play game</button>
+        <button class="share-btn" id="shareBtn">↗ <span>Share</span></button>
+      </nav>
+      <div class="top-right game-top-actions">
+        <div class="pill">⭐ <span id="stars">0</span> stars</div>
+        <button class="sound-btn" id="soundBtn" aria-label="Toggle sound">🔊</button>
+      </div>
+    </header>
+
+    <section id="homeScreen" class="home-screen">
+      <section class="home-hero">
+        <div class="home-copy">
+          <div class="home-kicker">🌈 CLASS 2 MATHS • LEARN THROUGH PLAY</div>
+          <h1>Big ideas start with <em>little numbers!</em></h1>
+          <p>Welcome to Math Adventure! This is your happy place to practise addition, subtraction, multiplication and division. Choose your level, solve fun questions, understand every step and collect stars as you learn.</p>
+          <div class="home-actions">
+            <button class="start-btn" id="startGameBtn">Start learning <span>→</span></button>
+            <button class="outline-btn" id="howToPlayBtn">How to play?</button>
+          </div>
+          <div class="home-points"><span>⭐ Earn stars</span><span>🧠 Learn step by step</span><span>♾️ Unlimited practice</span></div>
+        </div>
+        <div class="home-art">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-mascot">🦊</div>
+          <div class="float-bubble bubble-plus">＋</div><div class="float-bubble bubble-equal">＝</div>
+          <div class="float-bubble bubble-star">⭐</div>
+          <div class="art-caption">YOUR MATHS ADVENTURE BEGINS HERE!</div>
+        </div>
+      </section>
+
+      <section class="home-section" id="howSection">
+        <div class="section-heading"><div><span class="section-kicker">YOUR LEARNING JOURNEY</span><h2>Learn four maths superpowers</h2></div><p>Understand what each operation means, then practise with fresh questions.</p></div>
+        <div class="learning-grid">
+          <article class="learning-card add-card"><div class="learning-icon">➕</div><h3>Addition</h3><p>Put numbers together to find how many there are altogether. Learn carrying with clear place-value steps.</p><div class="mini-example">23 + 14 = 37</div></article>
+          <article class="learning-card sub-card"><div class="learning-icon">➖</div><h3>Subtraction</h3><p>Take one number away from another. Understand borrowing and discover what is left.</p><div class="mini-example">45 − 12 = 33</div></article>
+          <article class="learning-card mul-card"><div class="learning-icon">✖️</div><h3>Multiplication</h3><p>Make equal groups and use repeated addition to find the total quickly.</p><div class="mini-example">4 × 3 = 12</div></article>
+          <article class="learning-card div-card"><div class="learning-icon">➗</div><h3>Division</h3><p>Share objects equally into groups and learn how multiplication helps us check.</p><div class="mini-example">12 ÷ 3 = 4</div></article>
+        </div>
+      </section>
+
+      <section class="home-section level-section">
+        <div class="section-heading"><div><span class="section-kicker">GROW AT YOUR OWN SPEED</span><h2>Choose your challenge</h2></div><p>Start simple and move up when you feel ready. Advanced practice goes up to six digits.</p></div>
+        <div class="level-preview">
+          <div><span>🌱</span><b>Beginner</b><small>1-digit</small></div>
+          <div><span>🌼</span><b>Easy</b><small>2-digit</small></div>
+          <div><span>🌟</span><b>Medium</b><small>3-digit</small></div>
+          <div><span>🚀</span><b>Hard</b><small>4-digit</small></div>
+          <div><span>🏆</span><b>Advanced</b><small>Up to 6-digit</small></div>
+        </div>
+      </section>
+
+      <section class="how-card">
+        <div class="how-emoji">💡</div><div><b>How does Math Adventure work?</b><p>Pick a digit level and a timer, then choose one operation or Surprise Mix. Type your answer—correct answers are checked instantly, and a short explanation helps you learn from every question. New questions keep coming!</p></div>
+        <button class="start-btn" id="bottomStartBtn">Let’s play! →</button>
+      </section>
+      <footer class="home-footer"><span>💛 Made for curious young minds</span><span>Every question is a chance to grow!</span></footer>
+    </section>
+
+    <section id="gameScreen" class="game-screen hidden">
+
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">CLASS 2 • LEARN & PLAY</p>
+        <h1>Ready to become a <span>Math Star?</span> 🚀</h1>
+        <p class="intro">Solve fun questions, learn the steps, and collect stars. You can do it!</p>
+      </div>
+      <div class="mascot" aria-hidden="true">🦊<span>Let’s learn!</span></div>
+    </section>
+
+    <section class="progress-card">
+      <div class="progress-meta"><span>YOUR LEARNING JOURNEY</span><b id="progressLabel">Question 1 • Endless practice</b></div>
+      <div class="progress-track"><div id="progressBar"></div></div>
+    </section>
+
+    <section class="game-layout">
+      <aside class="topic-panel">
+        <h2>Choose digit level</h2>
+        <button class="topic active" data-level="1"><span class="topic-icon">🌱</span><span><b>Beginner</b><small>1-digit questions</small></span><span class="check">✓</span></button>
+        <button class="topic" data-level="2"><span class="topic-icon">🌼</span><span><b>Easy</b><small>2-digit questions</small></span></button>
+        <button class="topic" data-level="3"><span class="topic-icon">🌟</span><span><b>Medium</b><small>3-digit questions</small></span></button>
+        <button class="topic" data-level="4"><span class="topic-icon">🚀</span><span><b>Hard</b><small>4-digit questions</small></span></button>
+        <button class="topic" data-level="6"><span class="topic-icon">🏆</span><span><b>Advanced</b><small>Up to 6 digits</small></span></button>
+        <div class="tip-box"><span>⏱️</span><p><b>Question timer</b><br>Choose how much time you want for each question.</p></div>
+        <label class="timer-label" for="timerSelect">TIME PER QUESTION</label>
+        <select id="timerSelect" class="timer-select">
+          <option value="30">30 seconds</option>
+          <option value="60" selected>1 minute</option>
+          <option value="90">1 minute 30 seconds</option>
+          <option value="120">2 minutes</option>
+        </select>
+        <label class="timer-label" for="operationSelect">PRACTICE</label>
+        <select id="operationSelect" class="timer-select">
+          <option value="mixed">All operations (random)</option>
+          <option value="addition">Addition only</option>
+          <option value="subtraction">Subtraction only</option>
+          <option value="multiplication">Multiplication only</option>
+          <option value="division">Division only</option>
+        </select>
+      </aside>
+
+      <section class="question-card">
+        <div class="question-top">
+          <span class="question-tag" id="operationTag">🎲 SURPRISE MIX</span>
+          <span class="level-tag" id="levelTag">🌱 BEGINNER</span>
+        </div>
+        <div class="question-area">
+          <div class="story" id="story">Let’s warm up your brain!</div>
+          <div class="equation" id="equation">24 <span>+</span> 13 <span>=</span> <b>?</b></div>
+          <div class="timer-display"><span>⏳ Time left</span><b id="timerValue">01:00</b></div>
+          <div class="answer-row">
+            <label for="answer">Your answer <span class="auto-note">• checks automatically</span></label>
+            <div class="answer-input-wrap">
+              <input id="answer" type="number" inputmode="numeric" autocomplete="off" placeholder="?" aria-label="Your answer">
+              <button id="checkBtn" class="primary-btn">Check answer <span>→</span></button>
+            </div>
+            <p class="feedback" id="feedback" aria-live="polite">You’ve got this! Type your answer above.</p>
+          </div>
+        </div>
+
+        <div class="explain-box" id="explainBox">
+          <div class="explain-heading"><span>🧠</span><div><b>Learn the steps</b><small>Let’s understand, not just memorise.</small></div></div>
+          <div id="explanation" class="explanation">After you try, we’ll show you a simple step-by-step explanation here.</div>
+        </div>
+        <div class="controls">
+          <button id="hintBtn" class="secondary-btn">💡 Show me a hint</button>
+          <button id="skipBtn" class="next-btn">Skip question →</button>
+        </div>
+      </section>
+    </section>
+
+    <footer><span>💛 Made for curious young minds</span><span>Practice makes progress!</span></footer>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="resultModal" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+    <div class="modal-card">
+      <div class="celebrate">🏆✨🎉</div>
+      <p class="eyebrow">MISSION COMPLETE</p>
+      <h2 id="resultTitle">You did it, Math Star!</h2>
+      <p id="resultText">Keep practising and growing your maths skills!</p>
+      <div class="result-stats"><div><b id="finalCorrect">0</b><small>Correct</small></div><div><b id="finalStars">0 ⭐</b><small>Stars earned</small></div></div>
+      <button id="playAgainBtn" class="primary-btn">Continue practising 🚀</button>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
