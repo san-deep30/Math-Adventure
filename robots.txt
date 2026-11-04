@@ -1,0 +1,5 @@
+User-agent: *
+Allow:/
+
+Sitemap:
+https://math-adventure-sandeep.netlify.app/sitemap.xml
